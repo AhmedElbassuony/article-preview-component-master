@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Manrope", serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+main {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  min-height: 320px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px var(--Grayish-Blue);
+}
+@media (max-width:840px) {
+  main{
+    flex-direction: column;
+    margin: 20px;
+    height: 600px;
+    max-width: 420px;
+    picture{
+      height: 300px;
+      border-bottom-left-radius: 0px !important;
+      border-top-right-radius: 10px;
+    }
+  }
+}
+main>picture {
+  display: block;
+  min-width: 320px;
+  background-image: url("../images/drawers.jpg");
+  background-position: center left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+article {
+  max-width: 500px;
+  padding: 40px;
+
+  h1 {
+    color: var(--Very-Dark-Grayish-Blue);
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: var(--Desaturated-Dark-Blue);
+    font-weight: 500;
+  }
+}
+
+
+.share-continer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    picture {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 20px;
+      background: url("../images/avatar-michelle.jpg") center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  button {
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--Light-Grayish-Blue);
+    border: none;
+    color: var(--Very-Dark-Grayish-Blue);
+    cursor: pointer;
+
+    i {
+      color: var(--Very-Dark-Grayish-Blue);
+    }
+  }
+
+  .active,
+  button:hover {
+    background-color: var(--Very-Dark-Grayish-Blue) !important;
+
+    i {
+      color: #fff;
+    }
+  }
+}
+
+.share{
+  background-color: var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  width: 250px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  p{
+    color: var(--Desaturated-Dark-Blue) !important;
+    margin: 0 !important;
+  }
+  img{
+    cursor: pointer;
+  }
+  right: -108px;
+  top: -75px;
+  display: none;
+
+}
+
+@media(max-width:840px){
+  .share{
+    position:absolute;
+    width: 100%;
+    height: 86px;
+    left: -40px;
+    top: 5px;
+  }
+  .share::after{
+    border: none !important;
+  }
+}
+
+.share.active{
+  display: flex;
+}
+
+.share::after{
+  content: "";
+  border: 15px solid transparent;
+  border-top-color: var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  bottom: -28px;
+}
+
+.share-continer p:first-child {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 800;
+}
